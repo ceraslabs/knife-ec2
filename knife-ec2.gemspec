@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "knife-ec2/version"
 
 Gem::Specification.new do |s|
-  s.name        = "knife-ec2"
+  s.name        = "customized-knife-ec2"
   s.version     = Knife::Ec2::VERSION
   s.has_rdoc = true
   s.authors     = ["Adam Jacob","Seth Chisamore"]

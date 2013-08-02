@@ -347,6 +347,9 @@ class Chef
         msg_pair("Environment", config[:environment] || '_default')
         msg_pair("Run List", (config[:run_list] || []).join(', '))
         msg_pair("JSON Attributes",config[:json_attributes]) unless !config[:json_attributes] || config[:json_attributes].empty?
+      rescue Fog::Errors::Error => e
+        raise e, e.verbose, e.backtrace if e.verbose
+        raise e
       end
 
       def bootstrap_for_node(server,ssh_host)
